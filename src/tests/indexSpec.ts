@@ -66,5 +66,6 @@ afterAll(async (): Promise<void> => {
     await fs.access(resizedImagePath);
     fs.unlink(resizedImagePath);
   } catch {
+    console.log('Caught exception!!!');
   }
 });
