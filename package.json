@@ -9,7 +9,7 @@
     "test": "npm run build && npm run jasmine",
     "start": "nodemon src/index.ts",
     "lint": "eslint . --ext .ts",
-    "prettify": "prettier --config .prettierrc.json 'src' --write"
+    "prettify": "prettier --config .prettierrc.json \"src/**/*.ts\" --write"
   },
   "keywords": [
     "Udacity",
@@ -30,7 +30,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "nodemon": "^2.0.13",
-    "prettier": "^2.4.1",
+    "prettier": "^2.7.1",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   },
