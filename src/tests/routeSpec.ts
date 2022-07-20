@@ -2,7 +2,7 @@ import supertest from 'supertest';
 import app from '../index';
 import { promises as fs } from 'fs';
 import path from 'path';
-import File from './../file';
+import Image from '../utilities/image';
 
 const request: supertest.SuperTest<supertest.Test> = supertest(app);
 
@@ -58,7 +58,7 @@ describe('Test responses from endpoints', (): void => {
 
 afterAll(async (): Promise<void> => {
   const resizedImagePath: string = path.resolve(
-    File.imagesThumbPath,
+    Image.thumbPath,
     'fjord-199x199.jpg'
   );
 

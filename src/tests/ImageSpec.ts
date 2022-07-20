@@ -1,10 +1,10 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import File from './../file';
+import Image from '../utilities/image';
 
-describe('Test image processing via sharp', (): void => {
-  it('raises an error (invalid width value)', async (): Promise<void> => {
-    const error: null | string = await File.createThumb({
+describe('Test  processing via sharp', (): void => {
+  it('raises invalid width value error', async (): Promise<void> => {
+    const error: null | string = await Image.createThumb({
       filename: 'foo',
       width: '-100',
       height: '500'
@@ -12,8 +12,8 @@ describe('Test image processing via sharp', (): void => {
     expect(error).not.toBeNull();
   });
 
-  it('raises an error (filename does not exist)', async (): Promise<void> => {
-    const error: null | string = await File.createThumb({
+  it('raises filename does not exist error', async (): Promise<void> => {
+    const error: null | string = await Image.createThumb({
       filename: 'foo',
       width: '100',
       height: '500'
@@ -21,12 +21,11 @@ describe('Test image processing via sharp', (): void => {
     expect(error).not.toBeNull();
   });
 
-  // Note: Could also fail because of directory permissions
-  it('succeeds to write resized thumb file (existing file, valid size values)', async (): Promise<void> => {
-    await File.createThumb({ filename: 'fjord', width: '99', height: '99' });
+  it('writes a thumb file', async (): Promise<void> => {
+    await Image.createThumb({ filename: 'fjord', width: '99', height: '99' });
 
     const resizedImagePath: string = path.resolve(
-      File.imagesThumbPath,
+      Image.thumbPath,
       `fjord-99x99.jpg`
     );
     let errorFile: null | string = '';
@@ -44,7 +43,7 @@ describe('Test image processing via sharp', (): void => {
 
 afterAll(async (): Promise<void> => {
   const resizedImagePath: string = path.resolve(
-    File.imagesThumbPath,
+    Image.thumbPath,
     'fjord-99x99.jpg'
   );
 
@@ -52,6 +51,6 @@ afterAll(async (): Promise<void> => {
     await fs.access(resizedImagePath);
     fs.unlink(resizedImagePath);
   } catch {
-    console.log('Caught Exception!!!');
+    console.log('Exception Occured');
   }
 });

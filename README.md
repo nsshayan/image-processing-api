@@ -4,12 +4,12 @@
 - Install: ```npm install```
 - Build: ```npm run build```
 - Lint: ```npm run lint```
-- Prettify: ```npm run prettify```
+- prettier: ```npm run prettify```
 - Run unit tests: ```npm run test```
 - Start server: ```npm run start```
 
 ### Usage
-The server will listen on port 3000
+The server will listen on port 5000
 
 http://localhost:3000/
 
@@ -17,14 +17,9 @@ http://localhost:3000/
 http://localhost:3000/api/images
 
 Expected query arguments are:
-- _filename_: Available filenames are:
-  - encenadaport
-  - fjord
-  - icelandwaterfall
-  - palmtunnel
-  - santamonica
-- _width_: numerical pixel value > 0
-- _height_: numerical pixel value > 0
+- filename: Available [encenadaport, fjord,icelandwaterfall,palmtunnel,santamonica]
+- widt: numerical pixel value > 0
+- height: numerical pixel value > 0
 
 #### Example 1
 http://localhost:3000/api/images

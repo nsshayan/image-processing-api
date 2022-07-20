@@ -1,17 +1,14 @@
 import express from 'express';
-import routes from './routes/index';
-import File from './file';
+import routes from '../src/routes/root-middleware';
+import Image from './utilities/image';
 
 const app: express.Application = express();
 const port: number = 3000; // Default port
 
-// Add routes
 app.use(routes);
 
-// Start server
 app.listen(port, async (): Promise<void> => {
-  // Make sure that thumb path is available
-  await File.createThumbPath();
+  await Image.createThumbPath();
 
   const url: string = `\x1b[2mhttp://localhost:${port}\x1b[0m`;
   console.log(`Open ${url} ..`);

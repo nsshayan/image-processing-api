@@ -9,7 +9,7 @@
     "test": "npm run build && npm run jasmine",
     "start": "nodemon src/index.ts",
     "lint": "eslint . --ext .ts",
-    "prettify": "prettier --config .prettierrc.json \"src/**/*.ts\" --write"
+    "prettier": "prettier --config .prettierrc.json \"src/**/*.ts\" --write"
   },
   "keywords": [
     "Udacity",
