@@ -9,7 +9,7 @@
 - Start server: ```npm run start```
 
 ### Usage
-The server will listen on port 5000
+The server will listen on port 3000
 
 http://localhost:3000/
 
