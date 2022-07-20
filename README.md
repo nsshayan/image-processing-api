@@ -4,7 +4,7 @@
 - Install: ```npm install```
 - Build: ```npm run build```
 - Lint: ```npm run lint```
-- prettier: ```npm run prettify```
+- prettier: ```npm run prettier```
 - Run unit tests: ```npm run test```
 - Start server: ```npm run start```
 
